@@ -13,7 +13,7 @@ workflows:
             - aws-ecs/deploy-service-update:
                 requires:
                     - aws-ecr/build-and-push-image
-                family: 'cluster01'
+                family: 'test_task'
                 cluster-name: 'cluster01'
                 service-name: 'test_service'
                 container-image-name-updates: 'container=app_container,tag=${CIRCLE_SHA1}'
