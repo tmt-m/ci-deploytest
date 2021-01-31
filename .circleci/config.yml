@@ -9,12 +9,12 @@ workflows:
                 dockerfile: 'docker/php/Dockerfile'
                 region: AWS_REGION
                 account-url: AWS_ECR_ACCOUNT_URL
-                repo: 'test-app'
+                repo: 'test-app' #GitHubのリポジトリ名
                 tag: "${CIRCLE_SHA1}"
             - aws-ecs/deploy-service-update:
                 requires:
                     - aws-ecr/build-and-push-image
-                family: 'task01'
+                family: 'task01' #ECSのタスク定義名
                 cluster-name: 'cluster01'
                 service-name: 'service01'
                 container-image-name-updates: 'container=php_container,tag=${CIRCLE_SHA1}'
