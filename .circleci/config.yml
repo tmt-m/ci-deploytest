@@ -6,7 +6,7 @@ workflows:
     build_and_push_image:
         jobs:
             - aws-ecr/build-and-push-image:
-                dockerfile:'docker/php/Dockerfile'
+                dockerfile: 'docker/php'
                 region: AWS_REGION
                 account-url: AWS_ECR_ACCOUNT_URL
                 repo: 'ci-deploytest'
