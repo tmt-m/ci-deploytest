@@ -9,7 +9,7 @@ workflows:
                 dockerfile: 'docker/php/Dockerfile'
                 region: AWS_REGION
                 account-url: AWS_ECR_ACCOUNT_URL
-                repo: ''
+                repo: 'ci-deploytest'
                 tag: "${CIRCLE_SHA1}"
             - aws-ecs/deploy-service-update:
                 requires:
