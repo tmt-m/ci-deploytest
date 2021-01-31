@@ -1,0 +1,25 @@
+version: '3.4'
+services:
+  app:
+    build: ./docker/php
+    # build: ./docker/php
+    image: laravel
+    container_name: php_container
+    # command: >
+    #         bash -c "composer create-project --prefer-dist laravel/laravel iolle_project"
+    # volumes:
+    #   - .:/var/www/html
+    # volumes:
+    #   - C:/work/photozou/docker-compose-laravel2/docker-compose-laravel:/var/www/html
+  web:
+    # build: ./docker/web
+    build: ./docker/web
+    container_name: web_container
+    image: nginx-web
+    ports:
+      - '80:80'
+    depends_on:
+      - app
+     #volumes:
+     #  - C:/work/photozou/docker-compose-laravel/docker/web/default.conf:/etc/nginx/conf.d/default.conf
+     #  - C:/work/photozou/docker-compose-laravel:/var/www/html
