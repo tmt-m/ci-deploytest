@@ -25,6 +25,6 @@ RUN composer create-project --prefer-dist laravel/laravel tomita_project
 WORKDIR /var/www/html/tomita_project
 RUN chmod -R 777 bootstrap/cache
 RUN chmod -R 777 storage
-RUN echo "<?php phpinfo();" > public/index.php
+#RUN echo "<?php phpinfo();" > public/index.php
 # ポートを公開
 EXPOSE 9000
