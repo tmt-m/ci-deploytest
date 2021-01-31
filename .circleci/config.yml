@@ -14,7 +14,7 @@ workflows:
             - aws-ecs/deploy-service-update:
                 requires:
                     - aws-ecr/build-and-push-image
-                family: 'test_task'
+                family: 'task01'
                 cluster-name: 'cluster01'
-                service-name: 'test_service'
-                container-image-name-updates: 'container=app_container,tag=${CIRCLE_SHA1}'
+                service-name: 'service01'
+                container-image-name-updates: 'container=php_container,tag=${CIRCLE_SHA1}'
